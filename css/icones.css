@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.grupoIcones{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.instagram{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+#instagram {
+    color: white;
+    font-size:18px;  
+}
+
+#tiktok{
+    font-size:18px;
+}
+
+#kwai{
+    color: #fa7e1e;
+    font-size: 18px;
+}
+

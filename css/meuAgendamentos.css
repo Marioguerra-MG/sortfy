@@ -1,0 +1,104 @@
+
+/* ======== Estilo da Seção "Meus Agendamentos" ======== */
+.meusAgendamentos {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    max-width: 500px;
+    width: 100%;
+    text-align: left;
+    height: 92%;
+}
+
+/* Título "Meus Agendamentos" fixo no topo */
+#txtagendamentos {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    position: sticky; /* Mantém fixo no topo */
+    top: 0;
+    z-index: 10;
+}
+
+/* Barra separadora abaixo do título */
+.txtMeusAgendamentos {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgb(189, 189, 189);
+    width: 100%;
+}
+
+/* Estilo da área que exibe os agendamentos */
+.listaAgendamentos {
+    overflow-y: auto;
+    height: 90%;
+    scrollbar-width: thin; /* Para navegadores Firefox */
+    scrollbar-color: #a5a5a5 #f0f8ff; /* Cor da barra de rolagem e fundo (para Firefox) */
+}
+
+/* Estilos específicos para o Webkit (Chrome, Safari, Edge) */
+.listaAgendamentos::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.listaAgendamentos::-webkit-scrollbar-track {
+    background: #f0f8ff; /* Cor do fundo da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas para o fundo */
+}
+
+.listaAgendamentos::-webkit-scrollbar-thumb {
+    background: #28a745; /* Cor da barra de rolagem */
+    border-radius: 10px; /* Bordas arredondadas para a barra */
+    transition: background-color 0.3s; /* Efeito de transição suave */
+}
+
+.listaAgendamentos::-webkit-scrollbar-thumb:hover {
+    background: #218838; /* Cor da barra de rolagem ao passar o mouse */
+}
+
+
+/* ======== Estilo da Lista de Agendamentos ======== */
+#scheduled-posts {
+    width: 100%;
+    list-style: none;
+    padding: 10px;
+}
+
+/* Cada item da lista */
+#scheduled-posts li {
+    background: linear-gradient(145deg, #f1f1f1, #ffffff); /* Efeito de gradiente */
+    margin: 15px 0;
+    padding: 25px;  /* Maior espaçamento interno */
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+    font-size: 15px;
+    line-height: 1.6;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+}
+
+/* Efeito ao passar o mouse */
+#scheduled-posts li:hover {
+    background-color: #e6e6e6;
+   
+}
+
+/* Estilização do título dentro de cada post */
+#scheduled-posts li strong {
+    color: #007bff;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+/* Estilo da descrição */
+#scheduled-posts li span {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #777;
+}
+
+
+
+
