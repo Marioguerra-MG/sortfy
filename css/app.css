@@ -216,6 +216,7 @@ textarea {
         display: flex; /* Garantir que o main use o layout flexível */
         flex-grow: 1; /* Faz com que o main ocupe o máximo de altura possível */
         justify-content: center;
+        align-items: center;
     }
 
     form {
