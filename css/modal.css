@@ -2,7 +2,6 @@
 /* Estilos para o modal */
 .modalMenu {
     display: none;
-    /* Inicialmente oculto */
     position: fixed;
     top: 0;
     left: 0;
@@ -54,7 +53,7 @@
 /* Estilos para o botão de abrir o modal */
 #openModalBtnMenu {
     width: auto;
-    height: 43px;
+    height: auto;
     padding: 12px 18px;
     /* Mais espaço para o botão */
     border-radius: 8px;
@@ -79,4 +78,8 @@
 #ajusteFotos{
     text-decoration: none;
     color: black;
+}
+
+.linksMenu{
+    margin-top: 10px;
 }

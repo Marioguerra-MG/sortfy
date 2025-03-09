@@ -43,7 +43,7 @@ a{
 }
 
 main{
-    width: 500px;
+    width: 600px;
     height: 540px;
     background-color: white;
     padding: 10px;
@@ -118,6 +118,13 @@ input[type=range]::-webkit-scrollbar-thumb{
     margin-top: -3.6px;
 }
 
+#brilho{
+    font-size: 18px;
+}
+
+.filters-content button i {
+    margin-right: 8px; /* Ajuste o valor conforme necessário */
+}
 
 @media (max-width: 768px) {
     body {
@@ -147,7 +154,6 @@ input[type=range]::-webkit-scrollbar-thumb{
         padding-right: 10px;
         flex-direction: row;
         gap: 5px;
-        background-color: aqua;
         white-space: nowrap;  /* Impede que os itens quebrem para a linha */
         -webkit-overflow-scrolling: touch;  /* Melhora a rolagem em dispositivos móveis */
     }
