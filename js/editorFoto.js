@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputFile = document.querySelector("input[type=file]");
     const img = document.querySelector(".img-content img");
 
-    const buttonsFilter = document.querySelectorAll(".filters-constent button");
+    const buttonsFilter = document.querySelectorAll(".filters-content button");
 
     const range = document.querySelector("input[type=range]");
     const spnRageValue = document.getElementById('spnRangeValue');

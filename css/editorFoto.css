@@ -92,7 +92,7 @@ footer{
     font-size: 18px;
 }
 
-.filters-constent .active{
+.filters-content .active{
     font-weight: bold;
 }
 
@@ -108,7 +108,7 @@ input[type=range]::-webkit-slider-runnable-track{
     border-radius: 25px;
 }
 
-input[type=rage]::-webkit-scrollbar-thumb{
+input[type=range]::-webkit-scrollbar-thumb{
     height: 20px;
     width: 39px;
     border-radius: 7px;
@@ -116,4 +116,41 @@ input[type=rage]::-webkit-scrollbar-thumb{
     cursor: pointer;
     appearance: none;
     margin-top: -3.6px;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        height: auto; 
+    }
+
+    .menuVoltar {
+        width: 100%;
+        height: auto; 
+        margin-bottom: 20px;
+    }
+
+    .voltar {
+        gap: 8px;
+    }
+
+    main{
+        width: 100%;
+
+    }
+
+    .filters-content {
+        display: flex;
+        overflow-x: auto;    /* Habilita a rolagem horizontal */
+        width: 100%;          /* Usa a largura total disponível */
+        padding-right: 10px;
+        flex-direction: row;
+        gap: 5px;
+        background-color: aqua;
+        white-space: nowrap;  /* Impede que os itens quebrem para a linha */
+        -webkit-overflow-scrolling: touch;  /* Melhora a rolagem em dispositivos móveis */
+    }
+
+
 }
