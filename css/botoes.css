@@ -1,67 +1,89 @@
 /* ======== Botões de Ação ======== */
 
 /* Estilizando os botões */
-button.copy-btn, button.edit-btn, button.delete-btn {
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Remove a borda */
-    padding: 8px 12px; /* Adiciona espaçamento interno */
-    cursor: pointer; /* Cursor de mãozinha */
-    display: inline-flex; /* Flexbox para alinhar o ícone */
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px; /* Borda arredondada */
-    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
-  }
-  
-  /* Estilo para quando o mouse passar por cima */
-  button.copy-btn:hover, button.edit-btn:hover, button.delete-btn:hover {
-    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-  }
-  
-  /* Estilizando os ícones */
-  button.copy-btn i, button.edit-btn i, button.delete-btn i {
-    font-size: 18px; /* Tamanho do ícone */
-    color: #333; /* Cor padrão do ícone */
-    transition: color 0.3s ease; /* Transição suave para a cor do ícone */
-  }
-  
-  /* Alterando a cor do ícone ao passar o mouse */
-  button.copy-btn:hover i, button.edit-btn:hover i, button.delete-btn:hover i {
-    color: #007bff; /* Cor do ícone ao passar o mouse */
-  }
-
-  button.delete-btn:hover i {
-    color: #ff5050; /* Cor do ícone ao passar o mouse */
-  }
-  
-  /* Estilos específicos para cada botão */
-  button.copy-btn i {
-    margin-right: 8px; /* Distância entre o ícone e o texto, se houver */
-  }
-  
-  button.edit-btn i {
-    margin-right: 8px;
-  }
-  
-  button.delete-btn i {
-    margin-right: 8px;
-  }
-  
-
-.grupoCopiarExcluir{
-  display: flex;
-  flex-direction: row;
-  gap:15px;
+button.copy-btn,
+button.edit-btn,
+button.delete-btn {
+  background-color: transparent;
+  /* Fundo transparente */
+  border: none;
+  /* Remove a borda */
+  padding: 8px 12px;
+  /* Adiciona espaçamento interno */
+  cursor: pointer;
+  /* Cursor de mãozinha */
+  display: inline-flex;
+  /* Flexbox para alinhar o ícone */
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  /* Borda arredondada */
+  transition: background-color 0.3s ease;
+  /* Transição suave para a cor de fundo */
 }
 
-.editar{
+/* Estilo para quando o mouse passar por cima */
+button.copy-btn:hover,
+button.edit-btn:hover,
+button.delete-btn:hover {
+  background-color: #f0f0f0;
+  /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilizando os ícones */
+button.copy-btn i,
+button.edit-btn i,
+button.delete-btn i {
+  font-size: 18px;
+  /* Tamanho do ícone */
+  color: #333;
+  /* Cor padrão do ícone */
+  transition: color 0.3s ease;
+  /* Transição suave para a cor do ícone */
+}
+
+/* Alterando a cor do ícone ao passar o mouse */
+button.copy-btn:hover i,
+button.edit-btn:hover i,
+button.delete-btn:hover i {
+  color: #007bff;
+  /* Cor do ícone ao passar o mouse */
+}
+
+button.delete-btn:hover i {
+  color: #ff5050;
+  /* Cor do ícone ao passar o mouse */
+}
+
+/* Estilos específicos para cada botão */
+button.copy-btn i {
+  margin-right: 8px;
+  /* Distância entre o ícone e o texto, se houver */
+}
+
+button.edit-btn i {
+  margin-right: 8px;
+}
+
+button.delete-btn i {
+  margin-right: 8px;
+}
+
+
+.grupoCopiarExcluir {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.editar {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.grupoCopiarEditarExcluir p{
+.grupoCopiarEditarExcluir p {
   font-size: 10px;
   color: #333;
 }
@@ -70,30 +92,36 @@ button.copy-btn, button.edit-btn, button.delete-btn {
 
 /* Estilos para o modal */
 .modal {
-  display: none; /* Inicialmente oculto */
+  display: none;
+  /* Inicialmente oculto */
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+  background: rgba(0, 0, 0, 0.5);
+  /* Fundo escuro com transparência */
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Garante que o modal fique sobre outros elementos */
+  z-index: 1000;
+  /* Garante que o modal fique sobre outros elementos */
 }
 
 /* Estilos para o modal */
 .modal {
-  display: none; /* Inicialmente oculto */
+  display: none;
+  /* Inicialmente oculto */
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+  background: rgba(0, 0, 0, 0.5);
+  /* Fundo escuro com transparência */
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Garante que o modal fique sobre outros elementos */
+  z-index: 1000;
+  /* Garante que o modal fique sobre outros elementos */
 }
 
 /* Estilos para o conteúdo do modal */
@@ -105,14 +133,18 @@ button.copy-btn, button.edit-btn, button.delete-btn {
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative; /* Necessário para o posicionamento absoluto do botão de fechar */
+  position: relative;
+  /* Necessário para o posicionamento absoluto do botão de fechar */
 }
 
 /* Botão de fechamento */
 .close-btn {
-  position: absolute; /* Absolute para posicioná-lo em relação ao modal */
-  top: 10px; /* Distância de 10px do topo */
-  right: 10px; /* Distância de 10px da borda direita */
+  position: absolute;
+  /* Absolute para posicioná-lo em relação ao modal */
+  top: 10px;
+  /* Distância de 10px do topo */
+  right: 10px;
+  /* Distância de 10px da borda direita */
   font-size: 24px;
   cursor: pointer;
   color: #333;
@@ -131,25 +163,33 @@ button.copy-btn, button.edit-btn, button.delete-btn {
 #openModalBtn {
   width: auto;
   height: 43px;
-  padding: 12px 18px; /* Mais espaço para o botão */
+  padding: 12px 18px;
+  /* Mais espaço para o botão */
   border-radius: 8px;
   background: #28a745;
   color: white;
   font-weight: 600;
-  font-size: 1rem; /* Tamanho de fonte otimizado */
+  font-size: 1rem;
+  /* Tamanho de fonte otimizado */
   cursor: pointer;
   border: none;
-  display: inline-flex; /* Flexbox para centralizar o texto */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  text-align: center; /* Alinha o texto ao centro */
+  display: inline-flex;
+  /* Flexbox para centralizar o texto */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  text-align: center;
+  /* Alinha o texto ao centro */
   transition: background-color 0.3s ease;
 }
 
-.menu{
+.menu {
   gap: 15px;
 }
+
 /* Efeito de hover no botão de abrir o modal */
 #openModalBtn:hover {
-  background: #218838; /* Cor mais escura ao passar o mouse */
+  background: #218838;
+  /* Cor mais escura ao passar o mouse */
 }

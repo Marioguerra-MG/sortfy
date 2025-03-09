@@ -1,0 +1,82 @@
+/* Modal menu*/
+/* Estilos para o modal */
+.modalMenu {
+    display: none;
+    /* Inicialmente oculto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    /* Fundo escuro com transparência */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Garante que o modal fique sobre outros elementos */
+}
+
+/* Estilos para o conteúdo do modal */
+.modal-contentMenu {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    /* Necessário para o posicionamento absoluto do botão de fechar */
+}
+
+/* Botão de fechamento */
+.close-btnMenu {
+    position: absolute;
+    /* Absolute para posicioná-lo em relação ao modal */
+    top: 10px;
+    /* Distância de 10px do topo */
+    right: 10px;
+    /* Distância de 10px da borda direita */
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    background: transparent;
+    border: none;
+    padding: 5px;
+    transition: 0.3s ease;
+}
+
+/* Alterar a cor do botão de fechar quando o mouse passa por cima */
+.close-btnMenu:hover {
+    color: #ff5050;
+}
+
+/* Estilos para o botão de abrir o modal */
+#openModalBtnMenu {
+    width: auto;
+    height: 43px;
+    padding: 12px 18px;
+    /* Mais espaço para o botão */
+    border-radius: 8px;
+    background: #28a745;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    /* Tamanho de fonte otimizado */
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    /* Flexbox para centralizar o texto */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    transition: background-color 0.3s ease;
+}
+
+#ajusteFotos{
+    text-decoration: none;
+    color: black;
+}
