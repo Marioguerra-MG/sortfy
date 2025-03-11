@@ -126,6 +126,7 @@ input[type=range]::-webkit-scrollbar-thumb{
     margin-right: 8px; /* Ajuste o valor conforme necessário */
 }
 
+
 @media (max-width: 768px) {
     body {
         padding: 20px;

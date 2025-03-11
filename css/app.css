@@ -110,7 +110,7 @@ textarea {
     width: 100%;
     padding: 10px; /* Menos preenchimento */
     border-radius: 8px;
-    background: #28a745;
+    background: #0081CF;
     color: white;
     font-weight: 600;
     font-size: 0.9rem; /* Fonte menor */
@@ -119,8 +119,8 @@ textarea {
     transition: 0.3s;
 }
 
-#btnagendarPostagem:hover { background: #218838; }
-#btnagendarPostagem:active { background: #1e7e34; }
+#btnagendarPostagem:hover { background: #0081CF; }
+#btnagendarPostagem:active { background: #0081CF; }
 
 .listaDePost {
     list-style: none;
@@ -183,6 +183,17 @@ textarea {
     text-decoration: underline;
 }
 
+.aprimorarImagem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+#aprimorarImagemIa{
+    text-decoration: none;
+    color: black;
+}
 
 /* Responsividade para telas médias (entre 768px e 1024px) */
 @media (max-width: 1280px) {
@@ -197,8 +208,11 @@ textarea {
     }
 
     header {
-        height: auto;
+        height: 60px;
         padding: 15px;
+    }
+    .menu{
+        flex-direction: row;
     }
 
     nav ul {

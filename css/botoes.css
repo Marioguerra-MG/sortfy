@@ -166,7 +166,7 @@ button.delete-btn i {
   padding: 12px 18px;
   /* Mais espaço para o botão */
   border-radius: 8px;
-  background: #28a745;
+  background: #0081CF;
   color: white;
   font-weight: 600;
   font-size: 1rem;
@@ -190,6 +190,6 @@ button.delete-btn i {
 
 /* Efeito de hover no botão de abrir o modal */
 #openModalBtn:hover {
-  background: #218838;
+  background: #0596f0;
   /* Cor mais escura ao passar o mouse */
 }
