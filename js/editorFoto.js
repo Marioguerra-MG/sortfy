@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttonsFilter = document.querySelectorAll(".filters-content button");
 
     const range = document.querySelector("input[type=range]");
-    const spnRageValue = document.getElementById('spnRangeValue');
+    const spnRangeValue = document.getElementById('spnRangeValue');
 
     const btnResetFilters = document.getElementById('btnResetFilters');
     const btnSalvar = document.getElementById('btnSalvarImg');
@@ -34,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         filterActive = "Brilho";
 
-        spnRageValue.innerHTML = 100;
-        range.max = 200;
-        range.value = 100;
+        spnRangeValue.innerHTML = filters[filterActive].value;
+        range.max = filters[filterActive].max;
+        range.value = filters[filterActive].value;
 
         if (img) {
             img.style.transform = "";
@@ -57,38 +57,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-
     newImg.onclick = () => inputFile.click();
 
     inputFile.onchange = () => loadNewImage();
 
-    function loadNewImage(){
+    function loadNewImage() {
         let file = inputFile.files[0];
 
-        if(file){
+        if (file) {
             img.src = URL.createObjectURL(file);
         }
 
         init();
     }
 
-
-    buttonsFilter.forEach((item) =>
-        item.onclick = () =>{
-            document.querySelector(".active").classList.remove('active');
+    buttonsFilter.forEach((item) => {
+        item.onclick = () => {
+            const activeElement = document.querySelector(".active");
+            if (activeElement) {
+                activeElement.classList.remove('active');
+            }
             item.classList.add("active");
-            filterActive = item.innerHTML;
+
+            // Define o filtro ativo
+            const selectedFilter = item.innerHTML.trim(); // Remove espaços extras
+            if (!filters[selectedFilter]) {
+                console.error(`Filtro "${selectedFilter}" não encontrado.`);
+                return;
+            }
+
+            filterActive = selectedFilter;
+
+            // Atualiza os valores do range apenas se o filtro existir
             range.max = filters[filterActive].max;
             range.value = filters[filterActive].value;
-            spnRageValue.innerHTML = range.value;
-
-        }
-    )
-
+            spnRangeValue.innerHTML = range.value;
+        };
+    });
 
     range.oninput = () => {
+        if (!filters[filterActive]) return;
+
         filters[filterActive].value = range.value;
-        spnRageValue.innerHTML = range.value;
+        spnRangeValue.innerHTML = range.value;
 
         img.style.filter = `
         brightness(${filters["Brilho"].value}%)
@@ -96,8 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
         saturate(${filters["Saturação"].value}%)
         grayscale(${filters["Cinza"].value}%)
         invert(${filters["Inversão"].value}%)
-    `;
-    }
+        `;
+    };
 
     function handleDirection(type) {
         if (type === "rotateRight") {
@@ -117,12 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-
     btnSalvar.onclick = () => download();
 
-    function download(){
+    function download() {
         const canvas = document.createElement("canvas");
         const ctx = canvas.getContext("2d");
+
         canvas.width = img.naturalWidth;
         canvas.height = img.naturalHeight;
 
@@ -132,12 +143,12 @@ document.addEventListener("DOMContentLoaded", () => {
         saturate(${filters["Saturação"].value}%)
         grayscale(${filters["Cinza"].value}%)
         invert(${filters["Inversão"].value}%)
-    `;
+        `;
 
-    ctx.translate(canvas.width /2, canvas.height/2);
-        if(rotate !== 0 )ctx.rotate((rotate*Math.PI)/180);
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        if (rotate !== 0) ctx.rotate((rotate * Math.PI) / 180);
 
-        ctx.scale(flipY ,flipX);
+        ctx.scale(flipY, flipX);
         ctx.drawImage(
             img,
             -canvas.width / 2,
@@ -151,8 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
         link.href = canvas.toDataURL();
         link.click();
     }
-
-
 
     window.handleDirection = handleDirection;
 });

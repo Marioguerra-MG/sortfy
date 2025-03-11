@@ -16,9 +16,9 @@
 #txtagendamentos {
     font-size: 18px;
     text-align: center;
-    font-weight: 600;
     position: sticky; /* Mantém fixo no topo */
     top: 0;
+    font-weight: bold;
     z-index: 10;
 }
 
