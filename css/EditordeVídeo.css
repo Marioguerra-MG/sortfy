@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Estilo Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 10px;
+    flex-direction: column;
+}
+
+
+/* Estilo para o container principal */
+main {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+header.content-rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #0056b3;
+}
+
+button#btnSalvarVideo {
+    background-color: #007bff;
+    color: white;
+}
+
+button#btnResetFilters {
+    background-color: #ff6347;
+    color: white;
+}
+
+/* Estilo para a área do vídeo */
+.video-content {
+    margin-bottom: 20px;
+}
+
+.upload {
+    margin-bottom: 20px;
+}
+
+.upload label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.upload input[type="file"] {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.video-player {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#videoPlayer {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Estilo para os filtros */
+footer.fearramentas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.filters-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+}
+
+.filters-content button {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.filters-content button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.filters-content button:hover {
+    background-color: #ddd;
+}
+
+/* Estilo para o controle deslizante (range) */
+input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#spnRangeValue {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para a navegação (Voltar) */
+.menuVoltar {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#iconeVoltar {
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#iconeVoltar i {
+    font-size: 20px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .filters-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .video-content {
+        padding: 0 10px;
+    }
+
+    .filters-content button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-content {
+        padding: 0 5px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+

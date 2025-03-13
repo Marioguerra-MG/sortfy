@@ -183,7 +183,7 @@ textarea {
     text-decoration: underline;
 }
 
-.aprimorarImagem{
+.aprimorarImagem, .editorVídeo{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -194,6 +194,7 @@ textarea {
     text-decoration: none;
     color: black;
 }
+
 
 /* Responsividade para telas médias (entre 768px e 1024px) */
 @media (max-width: 1280px) {

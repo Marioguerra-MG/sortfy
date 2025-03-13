@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo para o corpo da página */
+body {
+  background-color: #f9f9f9; /* cor de fundo mais suave */
+  color: #333;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+.menuVoltar{
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 70px;
+  margin-bottom: 40px;
+}
+
+.voltar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+#btnVoltar{
+  font-size: 25px;
+  color: black;
+}
+
+/* Container principal */
+.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* sombra mais suave e mais espalhada */
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  text-align: center;
+  transition: box-shadow 0.3s ease; /* Transição para a sombra */
+}
+
+.container:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Efeito ao passar o mouse */
+}
+
+/* Título principal */
+h1 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #2D3A44; /* tom mais escuro e sofisticado */
+}
+
+/* Seção de entrada */
+.input-section {
+  margin-bottom: 20px;
+}
+
+.input-section label {
+  font-size: 18px;
+  color: #4A4A4A; /* cor mais suave */
+  display: block;
+  margin-bottom: 10px;
+}
+
+.input-section select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #D1D1D1; /* borda cinza clara */
+  border-radius: 8px;
+  outline: none;
+  background-color: #FAFAFA; /* fundo suave */
+  color: #555; /* texto mais suave */
+  transition: border-color 0.3s ease;
+}
+
+.input-section select:focus {
+  border-color: #FF6F61; /* borda de destaque quando em foco */
+  background-color: #ffffff; /* fundo claro no foco */
+}
+
+/* Botão de geração de título */
+button {
+  background-color: #FF6F61; /* tom de laranja suave */
+  color: white;
+  padding: 14px 24px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #FF5733; /* cor de fundo mais intensa ao passar o mouse */
+  transform: scale(1.05); /* leve aumento no tamanho */
+}
+
+/* Seção de saída */
+.output-section {
+  margin-top: 20px;
+}
+
+.output-section h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #2D3A44;
+}
+
+.output-section p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FF6F61; /* cor do título gerado em laranja */
+  margin-top: 10px;
+}

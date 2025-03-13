@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+  <title>Gerador de Títulos para YouTube</title>
+  <link rel="stylesheet" href="/css/tituloYouTube.css">
+</head>
+<body>
+    <div class="menuVoltar">
+        <div class="voltar">
+            <a id="iconeVoltar" href="/index.html"><i id="btnVoltar" class="fa-solid fa-circle-left"></i></a>
+            <a id="iconeVoltar" href="/index.html">Voltar</a>
+        </div>
+    </div>
+  <div class="container">
+    <h1>Gerador de Títulos para Vídeos do YouTube</h1>
+    
+    <div class="input-section">
+      <label for="keywords">Escolha uma Palavra-Chave:</label>
+      <select id="keywords">
+        <option value="">Selecione uma palavra-chave</option>
+        <option value="emagrecimento">Emagrecimento</option>
+        <option value="tecnologia">Tecnologia</option>
+        <option value="marketing digital">Marketing Digital</option>
+        <option value="culinária">Culinária</option>
+        <option value="fitness">Fitness</option>
+        <option value="educação">Educação</option>
+        <option value="negócios">Negócios</option>
+        <option value="beleza">Beleza</option>
+        <option value="autoajuda">Autoajuda</option>
+        <option value="negócios online">Negócios Online</option>
+        <option value="investimentos">Investimentos</option>
+        <option value="moda">Moda</option>
+        <option value="viagem">Viagem</option>
+        <option value="música">Música</option>
+        <option value="saúde mental">Saúde Mental</option>
+        <option value="fotografia">Fotografia</option>
+        <option value="decoração">Decoração</option>
+        <option value="esportes">Esportes</option>
+        <option value="games">games</option>
+      </select>
+    </div>
+    
+    <button onclick="generateYouTubeTitle()">Gerar Título</button>
+    
+    <div class="output-section">
+      <h3>Título Gerado:</h3>
+      <p id="generated-title"></p>
+    </div>
+  </div>
+  
+  <script src="/js/tituloYouTube.js"></script>
+</body>
+</html>
