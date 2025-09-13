@@ -1,0 +1,36 @@
+#toast-container {
+  position: fixed;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* centraliza */
+  z-index: 9999;
+  text-align: center;
+  /* alinha os textos se houver mais de um toast */
+}
+
+.toast {
+  background: #333;
+  color: #fff;
+  padding: 12px 18px;
+  margin-top: 10px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  #toast-container {
+
+    top: 8%;
+
+  }
+
+}

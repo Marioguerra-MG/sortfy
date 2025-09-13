@@ -184,6 +184,30 @@ button.delete-btn i {
   transition: background-color 0.3s ease;
 }
 
+#openModalBtnMenu{
+    width: auto;
+  height: 43px;
+  padding: 12px 18px;
+  /* Mais espaço para o botão */
+  border-radius: 8px;
+  background: #0081CF;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  /* Tamanho de fonte otimizado */
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  /* Flexbox para centralizar o texto */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  text-align: center;
+  /* Alinha o texto ao centro */
+  transition: background-color 0.3s ease;
+}
+
 .menu {
   gap: 15px;
 }
@@ -193,3 +217,4 @@ button.delete-btn i {
   background: #0596f0;
   /* Cor mais escura ao passar o mouse */
 }
+

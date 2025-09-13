@@ -4,135 +4,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendador de Postagens</title>
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/botoes.css">
     <link rel="stylesheet" href="/css/icones.css">
     <link rel="stylesheet" href="/css/modal.css">
     <link rel="stylesheet" href="/css/links.css">
     <link rel="stylesheet" href="/css/meuAgendamentos.css">
-    <title>Agendador de Postagens</title>
+    <link rel="stylesheet" href="/css/toast.css">
 </head>
 
 <body>
-    <header>
-        <div>
-            <button id="openModalBtnMenu">Ferramentas</button>
-            <button id="openModalBtnMenuR"><i id="iconeMenu" class="fa-solid fa-bars"></i></button>
+
+<header>
+    <button id="openModalBtnMenu"><i class="fa-solid fa-bars"></i></button>
+    <nav>
+        <ul class="menu">
+            <button id="openModalBtn">ADD</button>
+            <select id="platformfilter">
+                <option value="" disabled selected>Filtrar Plataforma:</option>
+                <option value="todos">Todos</option>
+                <option value="instagram">Instagram</option>
+                <option value="tiktok">TikTok</option>
+                <option value="kawai">Kwai</option>
+            </select>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Modal Dashboard -->
+    <div id="modalMenu" class="modalMenu">
+        <div class="modal-contentMenu">
+            <span id="closeModalBtnMenu" class="close-btnMenu">&times;</span>
+            <h2>Agendados</h2>
+            <div id="stats-container" class="stats-container"></div>
         </div>
+    </div>
 
-        <!-- <h1 id="txtLogo">sortfy</h1> -->
-        <nav>
-
-            <ul class="menu">
-                <button id="openModalBtn">ADD</button>
-                <!--<p id="filtrar">Filtrar por Plataforma:</p>-->
-                <select id="platformfilter">
-                    <option value="" disabled selected>Filtrar Plataforma:</option>
-                    <option value="todos">Todos</option>
+    <!-- Modal de Agendamento -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <h2>Agendar Postagem</h2>
+            <form id="post-form">
+                <label for="platform">Plataforma:</label>
+                <select id="platform">
+                    <option value="" disabled selected>Selecione</option>
                     <option value="instagram">Instagram</option>
                     <option value="tiktok">TikTok</option>
                     <option value="kawai">Kwai</option>
                 </select>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
+                <label for="titulo">Título:</label>
+                <input id="titulo" placeholder="Digite o título">
 
-        <!-- Modal -->
-        <div id="modalMenu" class="modalMenu">
-            <div class="modal-contentMenu">
-                <span id="closeModalBtnMenu" class="close-btnMenu">&times;</span>
-                <h2>Menu</h2>
-                <div class="linksMenu">
-                    <div class="editarFoto">
-                        <i class="fa-solid fa-camera"></i>
-                        <a href="/app/editorFoto.html" id="ajusteFotos">Editar foto</a>
-                    </div>
+                <label for="description">Descrição:</label>
+                <textarea id="description" rows="4" placeholder="Digite a descrição da postagem"></textarea>
 
-                    <div class="aprimorarImagem">
-                        <i class="fa-solid fa-brain"></i>
-                        <a href="/app/aprimorarImagem.html" id="aprimorarImagemIa">Aprimorar Imagem IA </a>
-                        <p id="iaBeta">(Teste 1.0)</p>
-                    </div>
+                <label for="hashtags">Hashtags (opcional):</label>
+                <input type="text" id="hashtags" placeholder="Digite as hashtags separadas por espaço">
 
-                    <div class="editorVídeo">
-                        <i class="fa-solid fa-video"></i>
-                        <a href="/app/EditordeVídeo.html" id="aprimorarImagemIa">Foto do Vídeo</a>
-                        <p id="iaBeta">(Filtros)</p>
-                    </div>
+                <label for="schedule">Agendar Data e Hora:</label>
+                <input type="datetime-local" id="schedule" required>
 
-                    <div class="editorVídeo">
-                        <i id="youtube" class="fa-solid fa-video"></i>
-                        <a href="/app/tituloYouTube.html" id="aprimorarImagemIa">Titulo YouTube</a>
-                        <p id="iaBeta">(Teste 1.0)</p>
-                    </div>
-
-                </div>
-
-
-            </div>
+                <button type="submit">Agendar Postagem</button>
+            </form>
         </div>
+    </div>
 
-        <!-- Modal -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span id="closeModalBtn" class="close-btn">&times;</span>
-                <h2>Agendar Postagem</h2>
-                <form id="post-form">
-                    <label for="platform">Plataforma:</label>
-                    <div class="grupoIcones">
-                        <div class="instagram">
-                            <i id="instagram" class="fa-brands fa-instagram"></i>
-                        </div>
-                        <i id="tiktok" class="fa-brands fa-tiktok"></i>
-                        <i id="kwai" class="fa-solid fa-video"></i>
-                    </div>
+    <div id="toast-container"></div>
 
-                    <select id="platform">
-                        <option value="" disabled selected>Selecione</option>
-                        <option value="instagram">Instagram</option>
-                        <option value="tiktok">TikTok</option>
-                        <option value="kawai">Kwai</option>
-                    </select>
+    <div class="meusAgendamentos">
+        <h2>Meus Agendamentos</h2>
+        <ul id="scheduled-posts"></ul>
+    </div>
+</main>
 
-                    <label for="description">Titulo:</label>
-                    <input id="titulo" rows="4" placeholder="Digite o titulo">
+<!-- Scripts -->
+<script src="/js/app.js"></script>
+<script src="/js/jsGeral.js"></script>
+<script src="/js/modal.js"></script>
 
-                    <label for="description">Descrição:</label>
-                    <textarea id="description" rows="4" placeholder="Digite a descrição da postagem"></textarea>
-
-                    <label for="hashtags">Hashtags opcional:</label>
-                    <input type="text" id="hashtags" placeholder="Digite as hashtags separadas por espaço">
-
-                    <label for="schedule">Agendar Data e Hora:</label>
-                    <input type="datetime-local" id="schedule" required>
-
-                    <button id="btnagendarPostagem" type="submit">Agendar Postagem</button>
-                </form>
-            </div>
-        </div>
-
-
-
-
-        <div class="meusAgendamentos">
-            <div class="txtMeusAgendamentos">
-                <h2 id="txtagendamentos">Meus Agendamentos</h2>
-            </div>
-            <div class="listaAgendamentos">
-                <ul class="listaDePost" id="scheduled-posts"></ul>
-            </div>
-        </div>
-
-    </main>
-
-    <script src="/js/app.js"></script>
-    <script src="/js/jsGeral.js"></script>
-    <script src="/js/modal.js"></script>
 </body>
-
 </html>
